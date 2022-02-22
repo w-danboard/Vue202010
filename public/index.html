@@ -13,10 +13,17 @@
     const vm = new Vue({ // vue2是基于options Api
       data () {
         return {
-          name: 'danboard'
+          name: 'danboard',
+          obj: {
+            name: 'wanglin',
+            age: 18
+          },
+          // vue中数组中的对象，如果变化了，也许要更新视图
+          arr: [{ a: 1 }] // 如果不做数组的原型方法重写，性能很差，比如数组很多，将会给数组的每一项都加get set方法
         }
       }
     })
+    vm.arr.push({ b: 2 })
     console.log(vm, '我是vue实例')
   </script>
 </body>
