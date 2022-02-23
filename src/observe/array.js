@@ -18,7 +18,6 @@ let methods = [ // concat slice ... 都不能改变原数组
 
 methods.forEach(method => { // AOP切片编程
   arrayMethods[method] = function (...args) { // 重写数组方法
-    // todo ...
     // 有可能用户新增的数据是响应式的，对象格式
     let result = oldArrayProtoMethods[method].call(this, ...args)
     let inserted;
